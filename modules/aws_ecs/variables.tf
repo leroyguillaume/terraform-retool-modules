@@ -146,7 +146,7 @@ variable "launch_type" {
 }
 
 # namescape: temporal namespace to use for Retool Workflows. We recommend this is only used by Retool.
-# If use_existing_temporal_cluster == true this should be config for currently existing cluster. 
+# If use_existing_temporal_cluster == true this should be config for currently existing cluster.
 # If use_existing_temporal_cluster == false, you should use the defaults.
 # host: hostname for Temporal Frontend service
 # port: port for Temporal Frontend service
@@ -387,4 +387,10 @@ variable "alb_egress_rules" {
     }
   ]
   description = "Egress rules for load balancer"
+}
+
+variable "alb_certificate_arn" {
+  type        = string
+  default     = null
+  description = "ARN of the ACM certificate to use for HTTPS. Defaults to null."
 }
